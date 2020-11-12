@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/pages/Login';
-import BasicDashboard from './views/dashboard/BasicDashboard';
+import UsuariosCadastrados from './views/dashboard/UsuariosCadastrados';
 import Alerts from './views/pages/Alerts';
-import Profile from './views/pages/Profile';
+import Registro from './views/pages/Registro';
 import Layout from './layouts/Layout';
 
 Vue.use(Router);
@@ -28,16 +28,16 @@ export default new Router({
       children: [
         // Components
         {
-          path: '',
-          component: BasicDashboard,
+          path: 'usuarios-cadastrados',
+          component: UsuariosCadastrados,
         },
         {
           path: 'alerts',
           component: Alerts,
         },
         {
-          path: 'profile',
-          component: Profile,
+          path: 'registro',
+          component: Registro,
         },
         {
           name: 'Icons',

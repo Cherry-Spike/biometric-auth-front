@@ -2,18 +2,17 @@
   <!-- ----------------------------------------------------------------------------- -->
   <!-- TableSimpleFixHeader -->
   <!-- ----------------------------------------------------------------------------- -->
-  <div>
+  <div class>
     <v-list-item-subtitle class="text-wrap">
-      Use the <code>fixed-header</code> prop together with the
-      <code>height</code> prop to fix the header to the top of the table.
+      Informações dos usuários cadastrados
     </v-list-item-subtitle>
     <div class="mt-4">
       <v-simple-table fixed-header height="300px">
         <template v-slot:default>
           <thead>
             <tr>
-              <th class="text-left">Name</th>
-              <th class="text-left">Calories</th>
+              <th class="text-left">Nome</th>
+              <th class="text-left">Cargo</th>
             </tr>
           </thead>
           <tbody>

@@ -15,13 +15,13 @@
       <!---USer Area -->
       <v-list-item two-line class="px-0">
         <v-list-item-avatar>
-          <img src="https://randomuser.me/api/portraits/men/81.jpg" />
+          <img src="https://i0.wp.com/apsredes.org/wp-content/uploads/2018/10/home-inovacao-aps-forte.jpg?w=640&ssl=1" />
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Dohn Deo</v-list-item-title>
+          <v-list-item-title>APS</v-list-item-title>
           <v-list-item-subtitle class="caption"
-            >Webdesigner</v-list-item-subtitle
+            >Biometric Auth</v-list-item-subtitle
           >
         </v-list-item-content>
       </v-list-item>
@@ -31,7 +31,7 @@
         v-for="item in items"
         :key="item.title"
         :to="item.to"
-        :active-class="`green white--text`"
+        :active-class="`teal white--text`"
         link
       >
         <v-list-item-icon>
@@ -61,15 +61,15 @@ export default {
   data: () => ({
     items: [
       {
-        title: 'Dashboard',
+        title: 'Usuarios Cadastrados',
         icon: 'mdi-view-dashboard',
-        to: '/dashboard/basic-dashboard',
+        to: '/dashboard/usuarios-cadastrados',
       },
 
       {
-        title: 'Profile',
+        title: 'Registro',
         icon: 'mdi-account-circle',
-        to: '/dashboard/profile',
+        to: '/dashboard/registro',
       },
 
       {
