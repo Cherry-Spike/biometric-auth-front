@@ -15,7 +15,7 @@
       <!---USer Area -->
       <v-list-item two-line class="px-0">
         <v-list-item-avatar>
-          <img src="https://i0.wp.com/apsredes.org/wp-content/uploads/2018/10/home-inovacao-aps-forte.jpg?w=640&ssl=1" />
+          <img src="@/assets/cherry_spike_2.png" />
         </v-list-item-avatar>
 
         <v-list-item-content>
