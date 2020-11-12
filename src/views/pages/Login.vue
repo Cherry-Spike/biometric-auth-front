@@ -11,7 +11,7 @@
             </h1>
           </v-card-text>
           <v-divider></v-divider>
-          <v-card-text>
+          <v-card-text class="d-flex justify-center flex-column">
             <v-text-field
               v-model="login"
               label="Usuário"
@@ -43,7 +43,10 @@
             <v-btn
               :loading="loading"
               :disabled="loading"
-              class="text-capitalize mt-5 element-0 align-self-center white--text"
+              class="text-capitalize mt-5 element-0 white--text font-weight-medium"
+              Extra
+              large
+              Button
               color="green"
               @click="onSubmit"
               >Enviar</v-btn
