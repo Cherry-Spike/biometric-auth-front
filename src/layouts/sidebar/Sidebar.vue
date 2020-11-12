@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
   props: {
     expandOnHover: {
       type: Boolean,
@@ -61,44 +61,44 @@ export default {
   data: () => ({
     items: [
       {
-        title: "Dashboard",
-        icon: "mdi-view-dashboard",
-        to: "/dashboard/basic-dashboard",
+        title: 'Dashboard',
+        icon: 'mdi-view-dashboard',
+        to: '/dashboard/basic-dashboard',
       },
 
       {
-        title: "Profile",
-        icon: "mdi-account-circle",
-        to: "/dashboard/profile",
+        title: 'Profile',
+        icon: 'mdi-account-circle',
+        to: '/dashboard/profile',
       },
 
       {
-        title: "Alerts",
-        icon: "mdi-alert",
-        to: "/dashboard/alerts",
+        title: 'Alerts',
+        icon: 'mdi-alert',
+        to: '/dashboard/alerts',
       },
 
       {
-        title: "Icons",
-        icon: "mdi-emoticon",
-        to: "/dashboard/icons",
+        title: 'Icons',
+        icon: 'mdi-emoticon',
+        to: '/dashboard/icons',
       },
     ],
   }),
   computed: {
-    ...mapState(["SidebarColor", "SidebarBg"]),
+    ...mapState(['SidebarColor', 'SidebarBg']),
     Sidebar_drawer: {
       get() {
         return this.$store.state.Sidebar_drawer;
       },
       set(val) {
-        this.$store.commit("SET_SIDEBAR_DRAWER", val);
+        this.$store.commit('SET_SIDEBAR_DRAWER', val);
       },
     },
   },
   watch: {
-    "$vuetify.breakpoint.smAndDown"(val) {
-      this.$emit("update:expandOnHover", !val);
+    '$vuetify.breakpoint.smAndDown'(val) {
+      this.$emit('update:expandOnHover', !val);
     },
   },
 

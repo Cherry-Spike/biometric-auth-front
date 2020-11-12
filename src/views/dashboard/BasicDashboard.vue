@@ -9,14 +9,13 @@
   </v-container>
 </template>
 
-
 <script>
 export default {
-  name: "BasicDashboard",
+  name: 'BasicDashboard',
   components: {
     TableSimpleFixHeader: () =>
       import(
-        "@/components/vuetifyComponents/tables-simple/TableSimpleFixHeader"
+        '@/components/vuetifyComponents/tables-simple/TableSimpleFixHeader'
       ),
   },
 };

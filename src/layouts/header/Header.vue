@@ -35,9 +35,9 @@
 </template>
 <script>
 // Utilities
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations } from 'vuex';
 export default {
-  name: "Header",
+  name: 'Header',
 
   components: {},
 
@@ -49,9 +49,9 @@ export default {
   },
   data: () => ({
     userprofile: [
-      { title: "My Profile" },
-      { title: "Account Setting" },
-      { title: "Logout" },
+      { title: 'My Profile' },
+      { title: 'Account Setting' },
+      { title: 'Logout' },
     ],
     href() {
       return undefined;
@@ -59,12 +59,12 @@ export default {
   }),
 
   computed: {
-    ...mapState(["Sidebar_drawer"]),
+    ...mapState(['Sidebar_drawer']),
   },
 
   methods: {
     ...mapMutations({
-      setSidebarDrawer: "SET_SIDEBAR_DRAWER",
+      setSidebarDrawer: 'SET_SIDEBAR_DRAWER',
     }),
   },
 };

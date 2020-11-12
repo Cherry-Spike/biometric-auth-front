@@ -16,12 +16,12 @@
 
 <script>
 export default {
-  name: "BaseCard",
+  name: 'BaseCard',
 
   props: {
     heading: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data: () => ({}),

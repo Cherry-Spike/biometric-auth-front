@@ -10,16 +10,28 @@
               width="150px"
               class="img-fluid rounded-circle shadow-sm"
             />
-            <h4 class="mt-2 title blue-grey--text text--darken-2 font-weight-regular">Hanna Gover</h4>
-            <h6 class="subtitle-2 font-weight-light">Accoubts Manager Amix corp</h6>
+            <h4
+              class="mt-2 title blue-grey--text text--darken-2 font-weight-regular"
+            >
+              Hanna Gover
+            </h4>
+            <h6 class="subtitle-2 font-weight-light">
+              Accoubts Manager Amix corp
+            </h6>
           </v-card-text>
         </v-card>
       </v-col>
       <v-col cols="12" lg="8">
         <v-card>
           <v-card-text>
-            <h3 class="title blue-grey--text text--darken-2 font-weight-regular">Default Form</h3>
-            <h6 class="subtitle-2 font-weight-light">All with vuetify element attributes</h6>
+            <h3
+              class="title blue-grey--text text--darken-2 font-weight-regular"
+            >
+              Default Form
+            </h3>
+            <h6 class="subtitle-2 font-weight-light">
+              All with vuetify element attributes
+            </h6>
           </v-card-text>
           <v-divider></v-divider>
           <v-card-text>
@@ -58,9 +70,16 @@
               background-color="transparent"
             ></v-textarea>
             <div class="mt-4">
-              <v-select :items="items" filled label="Select Country" background-color="transparent"></v-select>
+              <v-select
+                :items="items"
+                filled
+                label="Select Country"
+                background-color="transparent"
+              ></v-select>
             </div>
-            <v-btn class="text-capitalize mt-5 element-0" color="success">Submit</v-btn>
+            <v-btn class="text-capitalize mt-5 element-0" color="success"
+              >Submit</v-btn
+            >
           </v-card-text>
         </v-card>
       </v-col>
@@ -70,24 +89,24 @@
 
 <script>
 export default {
-  name: "Profile",
+  name: 'Profile',
 
   data: () => ({
-    dtext: "George deo",
-    emailtext: "",
-    password: "",
-    disableinput: "",
-    checkbox1: "",
-    checkbox2: "",
-    checkbox3: "",
+    dtext: 'George deo',
+    emailtext: '',
+    password: '',
+    disableinput: '',
+    checkbox1: '',
+    checkbox2: '',
+    checkbox3: '',
     show1: false,
     rules: {
-      required: value => !!value || "Required.",
-      min: v => v.length >= 8 || "Min 8 characters",
-      emailMatch: () => "The email and password you entered don't match"
+      required: (value) => !!value || 'Required.',
+      min: (v) => v.length >= 8 || 'Min 8 characters',
+      emailMatch: () => "The email and password you entered don't match",
     },
-    items: ["London", "India", "America"]
+    items: ['London', 'India', 'America'],
   }),
-  components: {}
+  components: {},
 };
 </script>

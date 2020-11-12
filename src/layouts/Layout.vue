@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import Header from "./header/Header";
-import Sidebar from "./sidebar/Sidebar";
-import Footer from "./footer/Footer";
+import Header from './header/Header';
+import Sidebar from './sidebar/Sidebar';
+import Footer from './footer/Footer';
 
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations } from 'vuex';
 export default {
-  name: "Layout",
+  name: 'Layout',
 
   components: {
     Header,
@@ -34,12 +34,12 @@ export default {
     expandOnHover: false,
   }),
   computed: {
-    ...mapState(["Customizer_drawer"]),
+    ...mapState(['Customizer_drawer']),
   },
 
   methods: {
     ...mapMutations({
-      setCustomizerDrawer: "SET_CUSTOMIZER_DRAWER",
+      setCustomizerDrawer: 'SET_CUSTOMIZER_DRAWER',
     }),
   },
 };
