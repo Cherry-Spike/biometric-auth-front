@@ -1,8 +1,9 @@
 <template>
   <v-container fluid class="down-top-padding">
     <v-row>
+      <v-col cols="12" lg="2"></v-col>
       <v-col cols="12" lg="8">
-        <BaseCard heading="Table Simple - Fixed header">
+        <BaseCard heading="Usuários Cadastrados">
           <TableSimpleFixHeader></TableSimpleFixHeader> </BaseCard
       ></v-col>
     </v-row>
@@ -11,7 +12,7 @@
 
 <script>
 export default {
-  name: 'BasicDashboard',
+  name: 'UsuariosCadastrados',
   components: {
     TableSimpleFixHeader: () =>
       import(

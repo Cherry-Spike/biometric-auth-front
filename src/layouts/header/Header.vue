@@ -1,12 +1,7 @@
 <template>
-  <v-app-bar app clipped-left clipped-right color="green" dark>
+  <v-app-bar app clipped-left clipped-right color="black" dark>
     <v-toolbar-title class="align-center d-flex">
-      <span class="logo-icon">
-        <img src="../../assets/logo-light-icon.png" />
-      </span>
-      <span class="logo-text ml-2">
-        <img src="../../assets/logo-light-text.png" class="mt-2" />
-      </span>
+      <h4>Biometric Auth</h4>
     </v-toolbar-title>
     <v-app-bar-nav-icon
       class="d-block d-md-none"
@@ -49,9 +44,9 @@ export default {
   },
   data: () => ({
     userprofile: [
-      { title: 'My Profile' },
-      { title: 'Account Setting' },
-      { title: 'Logout' },
+      { title: 'Meu Perfil' },
+      { title: 'Configurações' },
+      { title: 'Sair' },
     ],
     href() {
       return undefined;
