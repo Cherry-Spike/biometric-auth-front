@@ -71,18 +71,7 @@ export default {
         icon: 'mdi-account-circle',
         to: '/dashboard/registro',
       },
-
-      {
-        title: 'Alerts',
-        icon: 'mdi-alert',
-        to: '/dashboard/alerts',
-      },
-
-      {
-        title: 'Icons',
-        icon: 'mdi-emoticon',
-        to: '/dashboard/icons',
-      },
+      
     ],
   }),
   computed: {

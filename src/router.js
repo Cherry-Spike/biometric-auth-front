@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/pages/Login';
 import UsuariosCadastrados from './views/dashboard/UsuariosCadastrados';
-import Alerts from './views/pages/Alerts';
 import Registro from './views/pages/Registro';
 import Layout from './layouts/Layout';
 
@@ -32,17 +31,8 @@ export default new Router({
           component: UsuariosCadastrados,
         },
         {
-          path: 'alerts',
-          component: Alerts,
-        },
-        {
           path: 'registro',
           component: Registro,
-        },
-        {
-          name: 'Icons',
-          path: 'icons',
-          component: () => import('@/views/pages/Icons'),
         },
       ],
     },
