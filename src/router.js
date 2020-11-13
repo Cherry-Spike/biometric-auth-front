@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/pages/Login';
 import UsuariosCadastrados from './views/dashboard/UsuariosCadastrados';
+import Agrotoxicos from './views/dashboard/Agrotoxicos';
 import Registro from './views/pages/Registro';
 import Layout from './layouts/Layout';
 
@@ -33,6 +34,10 @@ export default new Router({
         {
           path: 'registro',
           component: Registro,
+        },
+        {
+          path: 'agrotoxicos',
+          component: Agrotoxicos,
         },
       ],
     },

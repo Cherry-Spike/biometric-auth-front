@@ -4,7 +4,7 @@
   <!-- ----------------------------------------------------------------------------- -->
   <div class>
     <v-list-item-subtitle class="text-wrap">
-      Informações dos usuários cadastrados
+      Informações dos usuários cadastrados:
     </v-list-item-subtitle>
     <div class="mt-4">
       <v-simple-table fixed-header height="300px">
@@ -18,7 +18,7 @@
           <tbody>
             <tr v-for="item in desserts" :key="item.name">
               <td>{{ item.name }}</td>
-              <td>{{ item.calories }}</td>
+              <td>{{ item.cargo }}</td>
             </tr>
           </tbody>
         </template>
@@ -34,44 +34,44 @@ export default {
   data: () => ({
     desserts: [
       {
-        name: 'Frozen Yogurt',
-        calories: 159,
+        name: 'Jhon Jones',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Ice cream sandwich',
-        calories: 237,
+        name: 'Goku',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Eclair',
-        calories: 262,
+        name: 'Chuck Norris',
+        cargo: 'BigBoss',
       },
       {
-        name: 'Cupcake',
-        calories: 305,
+        name: 'Pioio',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Gingerbread',
-        calories: 356,
+        name: 'EverTown',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Jelly bean',
-        calories: 375,
+        name: 'Biden<Trump',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Lollipop',
-        calories: 392,
+        name: 'Arnold Swharsjhda',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Honeycomb',
-        calories: 408,
+        name: 'Batma',
+        cargo: 'Cargo1',
       },
       {
-        name: 'Donut',
-        calories: 452,
+        name: 'Jailson',
+        cargo: 'Cargo1',
       },
       {
-        name: 'KitKat',
-        calories: 518,
+        name: 'Gross',
+        cargo: 'Cargo1',
       },
     ],
   }),

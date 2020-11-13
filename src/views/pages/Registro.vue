@@ -4,7 +4,7 @@
       <v-col cols="12" lg="2"></v-col>
       <v-col cols="12" lg="8">
         <v-card>
-          <v-card-text class="green darken-1">
+          <v-card-text class="blue accent-4">
             <h3
               class="title white--text font-weight-regular"
             >
@@ -64,7 +64,7 @@
             ></v-text-field>
             <v-btn 
               class="white--text text-capitalize mt-5 element-0" 
-              color="green" 
+              color="blue accent-4" 
               :disabled="!valid" 
               @click="validate"
               >Enviar</v-btn>
