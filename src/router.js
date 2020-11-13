@@ -3,7 +3,7 @@ import store from './store.js';
 import Router from 'vue-router';
 import Login from './views/pages/Login';
 import UsuariosCadastrados from './views/dashboard/UsuariosCadastrados';
-import Alerts from './views/pages/Alerts';
+import Agrotoxicos from './views/dashboard/Agrotoxicos';
 import Registro from './views/pages/Registro';
 import Layout from './layouts/Layout';
 
@@ -35,17 +35,12 @@ let router = new Router({
           component: UsuariosCadastrados,
         },
         {
-          path: 'alerts',
-          component: Alerts,
-        },
-        {
           path: 'registro',
           component: Registro,
         },
         {
-          name: 'icons',
-          path: 'icons',
-          component: () => import('@/views/pages/Icons'),
+          path: 'agrotoxicos',
+          component: Agrotoxicos,
         },
       ],
     },

@@ -61,27 +61,19 @@ export default {
   data: () => ({
     items: [
       {
-        title: 'Usuarios Cadastrados',
-        icon: 'mdi-view-dashboard',
-        to: '/dashboard/usuarios-cadastrados',
+        title: 'Agrotóxicos',
+        icon: 'mdi-chemical-weapon',
+        to: '/dashboard/agrotoxicos',
       },
-
       {
         title: 'Registro',
         icon: 'mdi-account-circle',
         to: '/dashboard/registro',
       },
-
       {
-        title: 'Alerts',
-        icon: 'mdi-alert',
-        to: '/dashboard/alerts',
-      },
-
-      {
-        title: 'Icons',
-        icon: 'mdi-emoticon',
-        to: '/dashboard/icons',
+        title: 'Usuarios Cadastrados',
+        icon: 'mdi-view-dashboard',
+        to: '/dashboard/usuarios-cadastrados',
       },
     ],
   }),
