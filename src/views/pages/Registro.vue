@@ -17,49 +17,51 @@
           <v-divider></v-divider>
           <v-card-text>
             <v-text-field
+              v-model="nome"
               label="Nome"
               filled
+              :rules="[rules.required]"
               background-color="transparent"
             ></v-text-field>
             <v-text-field
               type="Sobrenome"
-              v-model="emailtext"
+              v-model="sobrenome"
               label="Sobrenome"
               filled
+              :rules="[rules.required]"              
+              background-color="transparent"
+            ></v-text-field>
+            <div class="mt-4">
+              <v-select
+                :items="items"
+                filled
+                :rules="[rules.required]"
+                label="Selecionar o Cargo"
+                background-color="transparent"
+              ></v-select>
+            </div>
+            <v-text-field
+              type="Login"
+              v-model="login"
+              label="Login"
+              filled
+              :rules="[rules.required]"
               background-color="transparent"
             ></v-text-field>
             <v-text-field
-              v-model="password"
+              v-model="senha"
               filled
               background-color="transparent"
               :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[rules.required, rules.min]"
-              :type="show1 ? 'text' : 'password'"
+              :type="show1 ? 'text' : 'Senha'"
               name="input-10-1"
               label="Senha"
               hint="Pelo menos 8 caracteres"
               counter
               @click:append="show1 = !show1"
             ></v-text-field>
-            <v-textarea
-              filled
-              name="input-7-4"
-              rows="3"
-              label="Textarea"
-              value
-              background-color="transparent"
-            ></v-textarea>
-            <div class="mt-4">
-              <v-select
-                :items="items"
-                filled
-                label="Selecionar o Cargo"
-                background-color="transparent"
-              ></v-select>
-            </div>
-            <v-btn class="white--text text-capitalize mt-5 element-0" color="green"
-              >Enviar</v-btn
-            >
+            <v-btn class="white--text text-capitalize mt-5 element-0" color="green">Enviar</v-btn>
           </v-card-text>
         </v-card>
       </v-col>
@@ -71,19 +73,17 @@
 export default {
   name: 'Registro',
 
-  data: () => ({
-    dtext: '',
-    emailtext: '',
-    password: '',
+  data: () => ({   
+    nome: '',
+    senha: '',
     disableinput: '',
     checkbox1: '',
     checkbox2: '',
     checkbox3: '',
     show1: false,
     rules: {
-      required: (value) => !!value || 'Required.',
+      required: (value) => !!value || 'Preencha o campo.',
       min: (v) => v.length >= 8 || 'Min 8 characters',
-      emailMatch: () => "The email and password you entered don't match",
     },
     items: ['Cargo1', 'Cargo2', 'Cargo3'],
   }),
