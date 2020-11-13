@@ -31,7 +31,7 @@
         v-for="item in items"
         :key="item.title"
         :to="item.to"
-        :active-class="`teal white--text`"
+        :active-class="`teal darken-2 white--text`"
         link
       >
         <v-list-item-icon>

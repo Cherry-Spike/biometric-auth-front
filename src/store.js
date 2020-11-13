@@ -11,7 +11,7 @@ export default new Vuex.Store({
     SidebarColor: 'white',
     SidebarBg: '',
     status: '',
-    token: localStorage.getItem('token') || '',
+    token: 'algumacoisa',
     user: {},
   },
   mutations: {
