@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -9,6 +10,9 @@ export default new Vuex.Store({
     Customizer_drawer: false,
     SidebarColor: 'white',
     SidebarBg: '',
+    status: '',
+    token: localStorage.getItem('token') || '',
+    user: {},
   },
   mutations: {
     SET_SIDEBAR_DRAWER(state, payload) {
@@ -20,6 +24,56 @@ export default new Vuex.Store({
     SET_SIDEBAR_COLOR(state, payload) {
       state.SidebarColor = payload;
     },
+    auth_request(state) {
+      state.status = 'loading';
+    },
+    auth_success(state, token) {
+      state.status = 'success';
+      state.token = token;
+    },
+    auth_error(state) {
+      state.status = 'error';
+    },
+    logout(state) {
+      state.status = '';
+      state.token = '';
+    },
   },
-  actions: {},
+  actions: {
+    login({ commit }, formData) {
+      return new Promise((resolve, reject) => {
+        commit('auth_request');
+        axios
+          .post('http://localhost:8081/v1/autenticacao', formData, {
+            headers: {
+              'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+            },
+          })
+          .then((resp) => {
+            const token = resp.data.data.token;
+            localStorage.setItem('token', token);
+            axios.defaults.headers.common['Authorization'] = token;
+            commit('auth_success', token);
+            resolve(resp);
+          })
+          .catch((err) => {
+            commit('auth_error');
+            localStorage.removeItem('token');
+            reject(err);
+          });
+      });
+    },
+    logout({ commit }) {
+      return new Promise((resolve) => {
+        commit('logout');
+        localStorage.removeItem('token');
+        delete axios.defaults.headers.common['Authorization'];
+        resolve();
+      });
+    },
+  },
+  getters: {
+    isLoggedIn: (state) => !!state.token,
+    authStatus: (state) => state.status,
+  },
 });

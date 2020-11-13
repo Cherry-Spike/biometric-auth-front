@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import store from './store.js';
 import Router from 'vue-router';
 import Login from './views/pages/Login';
 import UsuariosCadastrados from './views/dashboard/UsuariosCadastrados';
@@ -8,7 +9,7 @@ import Layout from './layouts/Layout';
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -25,8 +26,10 @@ export default new Router({
     {
       path: '/dashboard',
       component: Layout,
+      meta: {
+        requiresAuth: true,
+      },
       children: [
-        // Components
         {
           path: 'usuarios-cadastrados',
           component: UsuariosCadastrados,
@@ -40,7 +43,7 @@ export default new Router({
           component: Registro,
         },
         {
-          name: 'Icons',
+          name: 'icons',
           path: 'icons',
           component: () => import('@/views/pages/Icons'),
         },
@@ -48,3 +51,17 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (store.getters.isLoggedIn) {
+      next();
+      return;
+    }
+    next('/login');
+  } else {
+    next();
+  }
+});
+
+export default router;

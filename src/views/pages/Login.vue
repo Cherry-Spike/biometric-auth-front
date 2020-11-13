@@ -62,7 +62,6 @@
         :color="color"
       >
         {{ text }}
-
         <template v-slot:action="{ attrs }">
           <v-btn :color="color" text v-bind="attrs" @click="snackbar = false">
             Fechar
@@ -74,7 +73,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
   name: 'Login',
   data() {
@@ -103,30 +101,24 @@ export default {
       formData.append('login', this.login);
       formData.append('senha', this.senha);
       try {
-        await axios
-          .post('http://localhost:8081/v1/autenticacao', formData, {
-            headers: {
-              'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
-            },
-          })
-          .then((response) => {
-            this.token = response.data;
-            console.log(this.token);
+        await this.$store
+          .dispatch('login', formData)
+          .then(() => {
+            this.$router.push('/dashboard');
             this.color = 'success';
             this.text = 'Bem-vindo!';
           })
-          .catch((error) => {
+          .catch((err) => {
             this.color = 'warning';
-            this.text = error.response.data.error.message
-              ? error.response.data.error.message
-              : error.response.data.message;
+            this.text = err.response.data.error.message
+              ? err.response.data.error.message
+              : err.response.data.message;
           });
-      } catch (error) {
-        console.log(error);
-      }
-      this.loading = false;
-      if (this.text) {
-        this.snackbar = true;
+      } finally {
+        this.loading = false;
+        if (this.text) {
+          this.snackbar = true;
+        }
       }
     },
   },

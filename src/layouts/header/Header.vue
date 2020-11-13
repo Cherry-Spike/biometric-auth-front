@@ -21,9 +21,13 @@
       </template>
 
       <v-list>
-        <v-list-item v-for="(item, i) in userprofile" :key="i" @click="href">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
+        <v-list-item
+          :key="Sair"
+          @click="logout"
+          :active-class="`teal white--text`"
+          link
+          ><v-list-item-title>Sair</v-list-item-title></v-list-item
+        >
       </v-list>
     </v-menu>
   </v-app-bar>
@@ -42,25 +46,21 @@ export default {
       default: false,
     },
   },
-  data: () => ({
-    userprofile: [
-      { title: 'Meu Perfil' },
-      { title: 'Configurações' },
-      { title: 'Sair' },
-    ],
-    href() {
-      return undefined;
-    },
-  }),
-
   computed: {
     ...mapState(['Sidebar_drawer']),
+    isLoggedIn: function () {
+      return this.$store.getters.isLoggedIn;
+    },
   },
-
   methods: {
     ...mapMutations({
       setSidebarDrawer: 'SET_SIDEBAR_DRAWER',
     }),
+    logout() {
+      this.$store.dispatch('logout').then(() => {
+        this.$router.push('/login');
+      });
+    },
   },
 };
 </script>
