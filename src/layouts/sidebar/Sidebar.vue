@@ -72,7 +72,7 @@ export default {
       },
       {
         title: 'Usuarios Cadastrados',
-        icon: 'mdi-view-dashboard',
+        icon: 'mdi-view-list',
         to: '/dashboard/usuarios-cadastrados',
       },
     ],

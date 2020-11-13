@@ -64,7 +64,7 @@
             ></v-text-field>
             <v-btn 
               class="white--text text-capitalize mt-5 element-0" 
-              color="teal" 
+              color="teal darken-1" 
               :disabled="!valid" 
               @click="validate"
               >Enviar</v-btn>
