@@ -25,7 +25,7 @@
               background-color="transparent"
               :append-icon="ocultar ? 'mdi-eye' : 'mdi-eye-off'"
               :rules="[rules.required, rules.min]"
-              :type="ocultar ? 'text' : 'senha'"
+              :type="ocultar ? 'text' : 'password'"
               name="input-10-1"
               label="Senha"
               hint="Mínimo 8 caracteres"
@@ -54,6 +54,21 @@
           </v-card-text>
         </v-card>
       </v-col>
+      <v-snackbar
+        v-model="snackbar"
+        :timeout="timeout"
+        outlined
+        top
+        :color="color"
+      >
+        {{ text }}
+
+        <template v-slot:action="{ attrs }">
+          <v-btn :color="color" text v-bind="attrs" @click="snackbar = false">
+            Fechar
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-row>
   </v-container>
 </template>
@@ -64,11 +79,14 @@ export default {
   name: 'Login',
   data() {
     return {
+      snackbar: false,
+      timeout: 2000,
       loading: false,
       login: '',
       senha: '',
       arquivo: '',
-      message: '',
+      text: '',
+      color: '',
       ocultar: false,
       token: null,
       rules: {
@@ -92,16 +110,24 @@ export default {
             },
           })
           .then((response) => {
-            this.token = response.data.conteudo;
+            this.token = response.data;
             console.log(this.token);
+            this.color = 'success';
+            this.text = 'Bem-vindo!';
           })
           .catch((error) => {
-            console.log(error.toJSON());
+            this.color = 'warning';
+            this.text = error.response.data.error.message
+              ? error.response.data.error.message
+              : error.response.data.message;
           });
       } catch (error) {
-        console.log(error.toJSON());
+        console.log(error);
       }
       this.loading = false;
+      if (this.text) {
+        this.snackbar = true;
+      }
     },
   },
 };
