@@ -4,7 +4,7 @@
       <v-col cols="12" lg="2"></v-col>
       <v-col cols="12" lg="8">
         <v-card>
-          <v-card-text class="green darken-1">
+          <v-card-text class="green">
             <h3
               class="title white--text font-weight-regular"
             >
@@ -16,7 +16,8 @@
           </v-card-text>
           <v-divider></v-divider>
           <v-card-text>
-            <v-text-field
+            <v-form ref="form" v-model="valid" lazy-validation>
+              <v-text-field
               v-model="nome"
               label="Nome"
               filled
@@ -61,7 +62,13 @@
               counter
               @click:append="show1 = !show1"
             ></v-text-field>
-            <v-btn class="white--text text-capitalize mt-5 element-0" color="green">Enviar</v-btn>
+            <v-btn 
+              class="white--text text-capitalize mt-5 element-0" 
+              color="teal darken-1" 
+              :disabled="!valid" 
+              @click="validate"
+              >Enviar</v-btn>
+            </v-form>
           </v-card-text>
         </v-card>
       </v-col>
@@ -72,7 +79,6 @@
 <script>
 export default {
   name: 'Registro',
-
   data: () => ({   
     nome: '',
     senha: '',
@@ -81,12 +87,17 @@ export default {
     checkbox2: '',
     checkbox3: '',
     show1: false,
+    valid: true,
     rules: {
       required: (value) => !!value || 'Preencha o campo.',
       min: (v) => v.length >= 8 || 'Min 8 characters',
     },
     items: ['Cargo1', 'Cargo2', 'Cargo3'],
   }),
-  components: {},
+  methods: {
+    validate () {
+      this.$refs.form.validate()
+    },
+  },
 };
 </script>
