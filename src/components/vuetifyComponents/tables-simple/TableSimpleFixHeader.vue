@@ -13,12 +13,28 @@
             <tr>
               <th class="text-left">Nome</th>
               <th class="text-left">Cargo</th>
+              <th class="text-left"></th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="item in desserts" :key="item.name">
               <td>{{ item.name }}</td>
               <td>{{ item.cargo }}</td>
+              <td><v-btn
+                class="mx-2"
+                icon
+              ><v-icon>
+                  mdi-pencil
+                </v-icon>
+                </v-btn>
+                <v-btn
+                  class="mx=2"
+                  icon
+                ><v-icon color="red">
+                    mdi-delete
+                  </v-icon>
+                </v-btn>
+              </td>
             </tr>
           </tbody>
         </template>
