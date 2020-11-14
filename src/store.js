@@ -5,6 +5,7 @@ import axios from 'axios';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  urlBase: 'https://biometric-auth-api.herokuapp.com',
   state: {
     Sidebar_drawer: null,
     Customizer_drawer: false,
@@ -44,7 +45,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit('auth_request');
         axios
-          .post('http://localhost:8081/v1/autenticacao', formData, {
+          .post(this.urlBase + '/v1/autenticacao', formData, {
             headers: {
               'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
             },
