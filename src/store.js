@@ -5,14 +5,13 @@ import axios from 'axios';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  urlBase: 'https://biometric-auth-api.herokuapp.com',
   state: {
     Sidebar_drawer: null,
     Customizer_drawer: false,
     SidebarColor: 'white',
     SidebarBg: '',
     status: '',
-    token: 'algumacoisa',
+    token: '',
     user: {},
   },
   mutations: {
@@ -45,11 +44,15 @@ export default new Vuex.Store({
       return new Promise((resolve, reject) => {
         commit('auth_request');
         axios
-          .post(this.urlBase + '/v1/autenticacao', formData, {
-            headers: {
-              'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
-            },
-          })
+          .post(
+            'https://biometric-auth-api.herokuapp.com/v1/autenticacao',
+            formData,
+            {
+              headers: {
+                'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+              },
+            }
+          )
           .then((resp) => {
             const token = resp.data.data.token;
             localStorage.setItem('token', token);
