@@ -30,7 +30,12 @@
                 </v-tooltip>
                 <v-tooltip bottom color="red">
                   <template v-slot:activator="{ on, attrs }">
-                    <v-btn class="mx=2" icon v-bind="attrs" v-on="on"
+                    <v-btn
+                      @click="deletar(item.id)"
+                      class="mx=2"
+                      icon
+                      v-bind="attrs"
+                      v-on="on"
                       ><v-icon color="red"> mdi-delete </v-icon>
                     </v-btn>
                   </template>
@@ -70,6 +75,11 @@ export default {
         .then((resp) => {
           this.usuarios = resp.data.data;
         });
+    },
+    deletar(id) {
+      this.$http
+        .delete('https://biometric-auth-api.herokuapp.com/v1/usuario/', id)
+        .then(() => {});
     },
   },
   beforeMount() {
