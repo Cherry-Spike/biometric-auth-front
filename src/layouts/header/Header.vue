@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app clipped-left clipped-right color="black" dark>
+  <v-app-bar app clipped-left clipped-right color="green darken-4" dark>
     <v-toolbar-title class="align-center d-flex">
       <h4>Biometric Auth</h4>
     </v-toolbar-title>
