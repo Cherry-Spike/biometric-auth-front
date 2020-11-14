@@ -12,7 +12,16 @@ export default new Vuex.Store({
     SidebarBg: '',
     status: '',
     token: '',
-    user: {},
+    user: {
+      cargoDescricao: '',
+      cargoId: 0,
+      id: 0,
+      login: '',
+      nivelDescricao: '',
+      nivelId: 0,
+      nome: '',
+      sobrenome: '',
+    },
   },
   mutations: {
     SET_SIDEBAR_DRAWER(state, payload) {
@@ -56,7 +65,7 @@ export default new Vuex.Store({
           .then((resp) => {
             const token = resp.data.data.token;
             localStorage.setItem('token', token);
-            axios.defaults.headers.common['Authorization'] = token;
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
             commit('auth_success', token);
             resolve(resp);
           })

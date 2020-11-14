@@ -1,7 +1,4 @@
 <template>
-  <!-- ----------------------------------------------------------------------------- -->
-  <!-- TableSimpleFixHeader -->
-  <!-- ----------------------------------------------------------------------------- -->
   <div class>
     <v-list-item-subtitle class="text-wrap">
       Informações dos usuários cadastrados:
@@ -13,26 +10,19 @@
             <tr>
               <th class="text-left">Nome</th>
               <th class="text-left">Cargo</th>
+              <th class="text-left">Nivel</th>
               <th class="text-left"></th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in desserts" :key="item.name">
-              <td>{{ item.name }}</td>
-              <td>{{ item.cargo }}</td>
-              <td><v-btn
-                class="mx-2"
-                icon
-              ><v-icon>
-                  mdi-pencil
-                </v-icon>
-                </v-btn>
-                <v-btn
-                  class="mx=2"
-                  icon
-                ><v-icon color="red">
-                    mdi-delete
-                  </v-icon>
+            <tr v-for="item in usuarios" :key="item.nome">
+              <td>{{ item.nome }}</td>
+              <td>{{ item.cargoDescricao }}</td>
+              <td>{{ item.nivelDescricao }}</td>
+              <td>
+                <v-btn class="mx-2" icon><v-icon> mdi-pencil </v-icon> </v-btn>
+                <v-btn class="mx=2" icon
+                  ><v-icon color="red"> mdi-delete </v-icon>
                 </v-btn>
               </td>
             </tr>
@@ -48,48 +38,30 @@ export default {
   name: 'TableSimpleFixHeader',
 
   data: () => ({
-    desserts: [
+    usuarios: [
       {
-        name: 'Jhon Jones',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Goku',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Chuck Norris',
-        cargo: 'BigBoss',
-      },
-      {
-        name: 'Pioio',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'EverTown',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Biden<Trump',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Arnold Swharsjhda',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Batma',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Jailson',
-        cargo: 'Cargo1',
-      },
-      {
-        name: 'Gross',
-        cargo: 'Cargo1',
+        cargoDescricao: '',
+        cargoId: 0,
+        id: 0,
+        login: '',
+        nivelDescricao: '',
+        nivelId: 0,
+        nome: '',
+        sobrenome: '',
       },
     ],
   }),
+  methods: {
+    obterUsuarios() {
+      this.$http
+        .get('https://biometric-auth-api.herokuapp.com/v1/usuario')
+        .then((resp) => {
+          this.usuarios = resp.data.data;
+        });
+    },
+  },
+  beforeMount() {
+    this.obterUsuarios();
+  },
 };
 </script>
