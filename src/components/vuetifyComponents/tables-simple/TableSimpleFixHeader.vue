@@ -20,20 +20,35 @@
             <tr v-for="item in desserts" :key="item.name">
               <td>{{ item.name }}</td>
               <td>{{ item.cargo }}</td>
-              <td><v-btn
-                class="mx-2"
-                icon
-              ><v-icon>
-                  mdi-pencil
-                </v-icon>
-                </v-btn>
-                <v-btn
-                  class="mx=2"
-                  icon
-                ><v-icon color="red">
-                    mdi-delete
-                  </v-icon>
-                </v-btn>
+              <td class="text-right">
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                    class="mx-2"
+                    icon
+                    v-bind="attrs"
+                    v-on="on"
+                      ><v-icon>
+                        mdi-pencil
+                      </v-icon>
+                    </v-btn>
+                    </template>
+                  <span>Editar</span>
+                </v-tooltip>
+                <v-tooltip bottom color="red">
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                    class="mx=2"
+                    icon
+                    v-bind="attrs"
+                    v-on="on"
+                      ><v-icon color="red">
+                        mdi-delete
+                      </v-icon>
+                    </v-btn>
+                    </template>
+                  <span>Deletar</span>
+                </v-tooltip>
               </td>
             </tr>
           </tbody>
