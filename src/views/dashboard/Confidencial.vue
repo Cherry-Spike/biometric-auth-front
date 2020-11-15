@@ -4,7 +4,7 @@
       <v-col cols="12" lg="1"></v-col>
       <v-col cols="12" lg="10">
         <BaseCard heading="Confidencial">
-          <TabelaAgro></TabelaAgro> </BaseCard
+          <TabelaConfidencial></TabelaConfidencial> </BaseCard
       ></v-col>
     </v-row>
   </v-container>
@@ -14,9 +14,9 @@
 export default {
   name: 'Confidencial',
   components: {
-    TabelaAgro: () =>
+    TabelaConfidencial: () =>
       import(
-        '@/components/vuetifyComponents/tables-simple/TabelaAgro'
+        '@/components/vuetifyComponents/tables-simple/TabelaConfidencial'
       ),
   },
 };
