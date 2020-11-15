@@ -61,6 +61,16 @@ export default {
   data: () => ({
     items: [
       {
+        title: 'Confidencial',
+        icon: 'mdi-alpha-c-box-outline',
+        to: '/dashboard/confidencial',
+      },
+      {
+        title: 'Indicadores',
+        icon: 'mdi-chart-histogram',
+        to: '/dashboard/indicadores',
+      },
+      {
         title: 'Agrotóxicos',
         icon: 'mdi-chemical-weapon',
         to: '/dashboard/agrotoxicos',

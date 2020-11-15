@@ -4,6 +4,8 @@ import Router from 'vue-router';
 import Login from './views/pages/Login';
 import UsuariosCadastrados from './views/dashboard/UsuariosCadastrados';
 import Agrotoxicos from './views/dashboard/Agrotoxicos';
+import Indicadores from './views/dashboard/Indicadores';
+import Confidencial from './views/dashboard/Confidencial';
 import Registro from './views/pages/Registro';
 import Layout from './layouts/Layout';
 
@@ -41,6 +43,14 @@ let router = new Router({
         {
           path: 'agrotoxicos',
           component: Agrotoxicos,
+        },
+        {
+          path: 'indicadores',
+          component: Indicadores,
+        },
+        {
+          path: 'confidencial',
+          component: Confidencial,
         },
       ],
     },
