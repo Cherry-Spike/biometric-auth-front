@@ -1,7 +1,7 @@
 <template>
   <v-footer app color="white" class="footerpart" inset>
     <v-col cols="12">
-      <span>© {{ new Date().getFullYear() }} — Cherry Spike</span>
+      <span >© {{ new Date().getFullYear() }} — <a href="https://github.com/Cherry-Spike/biometric-auth-api" target="_blank">Cherry Spike</a></span>
     </v-col>
   </v-footer>
 </template>
@@ -14,4 +14,7 @@ export default {
 .v-application .footerpart {
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
+a { 
+    text-decoration: none; 
+  }
 </style>

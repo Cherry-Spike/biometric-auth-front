@@ -62,6 +62,7 @@
                 @click:append="show1 = !show1"
               ></v-text-field>
               <v-file-input class="mt-8"
+              prepend-icon="mdi-fingerprint"
               outlined
               v-model="arquivo"
               show-size

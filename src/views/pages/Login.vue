@@ -33,6 +33,7 @@
               @click:append="ocultar = !ocultar"
             ></v-text-field>
             <v-file-input
+              prepend-icon="mdi-fingerprint"
               v-model="arquivo"
               show-size
               accept="image/png, image/jpeg, image/jpg"
