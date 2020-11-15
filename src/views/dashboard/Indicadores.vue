@@ -4,7 +4,7 @@
       <v-col cols="12" lg="1"></v-col>
       <v-col cols="12" lg="10">
         <BaseCard heading="Indicadores">
-          <TabelaAgro></TabelaAgro> </BaseCard
+          <TabelaIndicadores></TabelaIndicadores> </BaseCard
       ></v-col>
     </v-row>
   </v-container>
@@ -14,9 +14,9 @@
 export default {
   name: 'Indicadores',
   components: {
-    TabelaAgro: () =>
+    TabelaIndicadores: () =>
       import(
-        '@/components/vuetifyComponents/tables-simple/TabelaAgro'
+        '@/components/vuetifyComponents/tables-simple/TabelaIndicadores'
       ),
   },
 };

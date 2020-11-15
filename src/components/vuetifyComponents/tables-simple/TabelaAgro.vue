@@ -1,7 +1,4 @@
 <template>
-  <!-- ----------------------------------------------------------------------------- -->
-  <!-- TableSimpleFixHeader -->
-  <!-- ----------------------------------------------------------------------------- -->
   <div class>
     <v-list-item-subtitle class="text-wrap">
       Informações sobre os agrotóxicos utilizados:
