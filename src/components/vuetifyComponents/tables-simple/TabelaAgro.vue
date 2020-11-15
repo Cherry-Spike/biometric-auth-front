@@ -14,7 +14,6 @@
               <th class="text-left">Principio Ativo</th>
               <th class="text-left">GUS</th>
               <th class="text-left">EPA</th>
-              <th class="text-left">Ambos</th>
               <th class="text-left">GOSS Sed.</th>
               <th class="text-left">GOSS Dis.</th>
             </tr>
@@ -24,7 +23,6 @@
               <td>{{ item.nome }}</td>
               <td>{{ item.gus }}</td>
               <td>{{ item.epa }}</td>
-              <td>{{ item.ambos }}</td>
               <td>{{ item.gossSed }}</td>
               <td>{{ item.gossDis }}</td>
             </tr>
@@ -45,7 +43,6 @@ export default {
         nome: 'Metconazol',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -53,7 +50,6 @@ export default {
         nome: 'Fluazinam',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -61,7 +57,6 @@ export default {
         nome: 'Imibenconazol',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -69,7 +64,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -77,7 +71,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -85,7 +78,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -93,7 +85,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -101,7 +92,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -109,7 +99,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -117,7 +106,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -125,7 +113,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -133,7 +120,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
@@ -141,7 +127,6 @@ export default {
         nome: 'Teste',
         gus: '-',
         epa: '-',
-        ambos: '-',
         gossSed: '-',
         gossDis: '-',
       },
