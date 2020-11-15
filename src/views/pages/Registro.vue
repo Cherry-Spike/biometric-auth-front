@@ -9,7 +9,7 @@
               Registro de Usuário
             </h3>
             <h6 class="white--text subtitle-2 font-weight-light">
-              Por favor preencha os campos abaixo:
+              Por favor preencha todos os campos abaixo:
             </h6>
           </v-card-text>
           <v-divider></v-divider>
