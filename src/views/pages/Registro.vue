@@ -30,7 +30,7 @@
                 :rules="[rules.required]"
                 background-color="transparent"
               ></v-text-field>
-              <div class="mt-4">
+              <div class="mt-3">
                 <v-select
                   :items="cargosArray"
                   filled
@@ -61,6 +61,14 @@
                 counter
                 @click:append="show1 = !show1"
               ></v-text-field>
+              <v-file-input class="mt-8"
+              outlined
+              v-model="arquivo"
+              show-size
+              accept="image/png, image/jpeg, image/jpg"
+              label="Inserir impressão digital"
+              :rules="[rules.required]"
+            ></v-file-input>
               <v-btn
                 class="white--text text-capitalize mt-5 element-0"
                 color="teal darken-1"
