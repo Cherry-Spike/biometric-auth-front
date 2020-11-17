@@ -12,10 +12,10 @@ export default new Vuex.Store({
     SidebarBg: '',
     status: '',
     token: '',
-    user: {
+    usuario: {
+      id: 0,
       cargoDescricao: '',
       cargoId: 0,
-      id: 0,
       login: '',
       nivelDescricao: '',
       nivelId: 0,
@@ -84,9 +84,18 @@ export default new Vuex.Store({
         resolve();
       });
     },
+    obterUsuarioPorLogin(login) {
+      return new Promise(() => {
+        axios.get('https://biometric-auth-api.herokuapp.com/v1/usuario', login);
+      }).then((resp) => {
+        this.usuario = resp.data.data;
+        return resp;
+      });
+    },
   },
   getters: {
     isLoggedIn: (state) => !!state.token,
     authStatus: (state) => state.status,
+    obterUsuario: (state) => state.usuario,
   },
 });

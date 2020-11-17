@@ -1,11 +1,14 @@
 <template>
-  <v-container fluid class="down-top-padding d-flex mt-16">
+  <v-container
+    fluid
+    class="down-top-padding d-flex green lighten-5 fill-height"
+  >
     <v-row class="justify-center">
       <v-col cols="12" lg="4" sm="6">
         <v-card>
           <v-card-text>
             <h1
-              class="display-1 blue-grey--text text--darken-2 font-weight-regular text-center"
+              class="display-2 blue-grey--text text--darken-2 font-weight-regular text-center"
             >
               Login
             </h1>
@@ -108,6 +111,7 @@ export default {
             this.$router.push('/dashboard');
             this.color = 'success';
             this.text = 'Bem-vindo!';
+            this.$store.dispatch('obterUsuarioPorLogin', this.login);
           })
           .catch((err) => {
             this.color = 'warning';
