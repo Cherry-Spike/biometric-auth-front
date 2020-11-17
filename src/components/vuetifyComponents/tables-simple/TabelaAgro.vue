@@ -9,6 +9,7 @@
           <thead>
             <tr>
               <th class="text-left">Principio Ativo</th>
+              <th class="text-left">Endereço</th>
               <th class="text-left">GUS</th>
               <th class="text-left">EPA</th>
               <th class="text-left">GOSS Sed.</th>
