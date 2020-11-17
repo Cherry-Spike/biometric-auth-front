@@ -9,6 +9,7 @@
           <thead>
             <tr>
               <th class="text-left">Principio Ativo</th>
+              <th class="text-left">Endereço</th>
               <th class="text-left">GUS</th>
               <th class="text-left">EPA</th>
               <th class="text-left">GOSS Sed.</th>
@@ -18,6 +19,7 @@
           <tbody>
             <tr v-for="item in desserts" :key="item.nome">
               <td>{{ item.nome }}</td>
+              <td>{{ item.endereco }}</td>
               <td>{{ item.gus }}</td>
               <td>{{ item.epa }}</td>
               <td>{{ item.gossSed }}</td>
@@ -38,6 +40,7 @@ export default {
     desserts: [
       {
         nome: 'Metconazol',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -45,6 +48,7 @@ export default {
       },
       {
         nome: 'Fluazinam',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -52,6 +56,7 @@ export default {
       },
       {
         nome: 'Imibenconazol',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -59,6 +64,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -66,6 +72,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -73,6 +80,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -80,6 +88,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -87,6 +96,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -94,6 +104,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -101,6 +112,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -108,6 +120,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -115,6 +128,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
@@ -122,6 +136,7 @@ export default {
       },
       {
         nome: 'Teste',
+        endereco: '-',
         gus: '-',
         epa: '-',
         gossSed: '-',
