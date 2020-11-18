@@ -92,6 +92,14 @@ export default new Vuex.Store({
         return resp;
       });
     },
+    salvarUsuario() {
+      return new Promise(() => {
+        axios.post('https://biometric-auth-api.herokuapp.com/v1/usuario');
+      }).then((resp) => {
+        this.usuario = resp.data.data;
+        return resp;
+      });
+    },
   },
   getters: {
     isLoggedIn: (state) => !!state.token,
