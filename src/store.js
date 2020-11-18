@@ -66,6 +66,7 @@ export default new Vuex.Store({
             const token = resp.data.data.token;
             localStorage.setItem('token', token);
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+            this.state.usuario.login = formData.get('login');
             commit('auth_success', token);
             resolve(resp);
           })
@@ -84,12 +85,21 @@ export default new Vuex.Store({
         resolve();
       });
     },
-    obterUsuarioPorLogin(login) {
-      return new Promise(() => {
-        axios.get('https://biometric-auth-api.herokuapp.com/v1/usuario', login);
-      }).then((resp) => {
-        this.usuario = resp.data.data;
-        return resp;
+    obterUsuarioPorLogin({ commit }, username) {
+      return new Promise((resolve) => {
+        axios
+          .get({
+            url: 'https://biometric-auth-api.herokuapp.com/v1/usuario/{login',
+            data: { login: username },
+          })
+          .then((result) => {
+            commit('obterUsuarioPorId');
+            this.state.usuario = result.data.data;
+            resolve();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       });
     },
   },

@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app clipped-left clipped-right color="green darken-4" dark>
     <v-toolbar-title class="align-center d-flex">
-      <h4><v-icon>mdi-fingerprint</v-icon>  Biometric Auth</h4>
+      <h4><v-icon>mdi-fingerprint</v-icon> Biometric Auth</h4>
     </v-toolbar-title>
     <v-app-bar-nav-icon
       class="d-block d-md-none"
@@ -22,7 +22,7 @@
 
       <v-list>
         <v-list-item
-          :key="Sair"
+          key="Sair"
           @click="logout"
           :active-class="`teal white--text`"
           link

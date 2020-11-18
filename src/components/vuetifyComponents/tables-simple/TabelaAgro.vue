@@ -17,12 +17,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in informacoes" :key="item.id">
+            <tr v-for="item in informacaoes" :key="item.id">
               <td>{{ item.descricao }}</td>
-              <td>{{ item.gus }}</td>
-              <td>{{ item.epa }}</td>
-              <td>{{ item.gossSed }}</td>
-              <td>{{ item.gossDis }}</td>
+              <td>{{ item.riscoSubterraneoGus }}</td>
+              <td>{{ item.riscoSubterraneoEpa }}</td>
+              <td>{{ item.riscoSuperficialGossSedimental }}</td>
+              <td>{{ item.riscoSuperficialGossDissolvido }}</td>
               <td>{{ item.endereco }}</td>
             </tr>
           </tbody>
@@ -33,38 +33,60 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'TabelaAgro',
-  data: () => ({
-    informacaoes: [
-      {
-        id: '',
-        descricao: '',
-        gus: '',
-        epa: '',
-        gossSed: '',
-        gossDis: '',
-        endereco: '',
-      },
-    ],
-  }),
+  data() {
+    return {
+      informacaoes: [
+        {
+          id: 1,
+          descricao: '',
+          nivel: {
+            id: 1,
+            descricao: '1',
+          },
+          riscoSubterraneoGus: '',
+          riscoSubterraneoEpa: '',
+          riscoSuperficialGossSedimental: '',
+          riscoSuperficialGossDissolvido: '',
+          endereco: '',
+        },
+      ],
+      usuarioId: 0,
+    };
+  },
+  computed: {
+    ...mapState(['usuario']),
+  },
+  beforeMount() {
+    let username = this.usuario.login;
+    this.obterUsuarioPorLogin(username);
+  },
   methods: {
     validate() {
       this.$refs.form.validate();
     },
-    obterInformacoes() {
+    obterInformacoes(usuarioId) {
       this.$http
         .get(
-          'https://biometric-auth-api.herokuapp.com/v1/informacao',
-          this.$store.getters.obterUsuario.id
+          'https://biometric-auth-api.herokuapp.com/v1/informacao/' + usuarioId
         )
         .then((resp) => {
           this.informacaoes = resp.data.data;
         });
     },
-  },
-  beforeMount() {
-    this.obterInformacoes(this.$store.getters.obterUsuario().id);
+    obterUsuarioPorLogin(username) {
+      this.$http
+        .get('https://biometric-auth-api.herokuapp.com/v1/usuario/{login}', {
+          params: { login: username },
+        })
+        .then((resp) => {
+          this.usuarioId = resp.data.data.id;
+          this.obterInformacoes(resp.data.data.id);
+        });
+    },
   },
 };
 </script>
