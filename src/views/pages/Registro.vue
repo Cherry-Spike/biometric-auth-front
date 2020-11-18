@@ -32,6 +32,7 @@
               ></v-text-field>
               <div class="mt-3">
                 <v-select
+                  v-model="cargoDesc"
                   :items="cargosArray"
                   filled
                   :rules="[rules.required]"
@@ -74,7 +75,7 @@
                 class="white--text text-capitalize mt-5 element-0"
                 color="teal darken-1"
                 :disabled="!valid"
-                @click="validate"
+                @click="onSubmit"
                 >Enviar</v-btn
               >
             </v-form>
@@ -91,12 +92,12 @@ export default {
   data: () => ({
     nome: '',
     senha: '',
-    disableinput: '',
-    checkbox1: '',
-    checkbox2: '',
-    checkbox3: '',
+    arquivo: '',
+    login: '',
+    cargoDesc: '',
+    sobrenome: '',
     show1: false,
-    valid: true,
+    valid: false,
     rules: {
       required: (value) => !!value || 'Preencha o campo.',
       min: (v) => v.length >= 8 || 'Min 8 characters',
@@ -122,6 +123,26 @@ export default {
           this.cargos = resp.data.data;
         });
     },
+   async onSubmit() {
+      this.submit = true;
+      const formData = new FormData();
+      formData.append('cargos', this.cargos.id);
+      formData.append('cargoDesc', this.cargoDesc);
+      formData.append('arquivo', this.arquivo);
+      formData.append('login', this.login);
+      formData.append('nome', this.nome);
+      formData.append('senha', this.senha);
+      formData.append('sobrenome', this.sobrenome);
+      try {
+        await this.$store
+          .dispatch('salvarUsuario', formData)
+      } finally {
+        this.submit = false;
+        if (this.text) {
+          this.snackbar = true;
+        }
+      }
+    } 
   },
   beforeMount() {
     this.obterCargos();
