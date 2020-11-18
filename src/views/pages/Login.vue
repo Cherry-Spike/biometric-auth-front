@@ -111,7 +111,6 @@ export default {
             this.$router.push('/dashboard');
             this.color = 'success';
             this.text = 'Bem-vindo!';
-            this.$store.dispatch('obterUsuarioPorLogin', this.login);
           })
           .catch((err) => {
             this.color = 'warning';
